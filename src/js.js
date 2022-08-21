@@ -1,7 +1,3 @@
-const print = (...args) => {
-    for (arg of args) document.write(`<p>${arg}</p>`)
-}
-
 const Tree = (tag, ...fields) => {
     return {
         tag: tag,
@@ -106,4 +102,15 @@ const lexer = (str) => {
     const [isFunc, length, unoFunc] = findFunc(str)
     if (isFunc) return Tree(1, unoFunc, lexer(str.slice(length)))
     else return Tree(0, Number(str))
+}
+
+const getResult = () => {
+    let res = solve(
+        lexer(
+            document.getElementById("input").value
+        )
+    )
+
+    if (!isNaN(res)) document.getElementById("result").innerHTML = res
+    else document.getElementById("result").innerHTML = ""
 }

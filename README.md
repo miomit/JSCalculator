@@ -1,3 +1,3 @@
 # JSCalculator
 
-<img src="gif.gif">
+<img src="gif.gif", alt="gif">
